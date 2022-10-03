@@ -5,9 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         .animate__animated animate__rotateIn {
-            --animate-duration: 3s;
+            --animate-duration: 5s;
+        }
+        .animate__animated animate__jackInTheBox{
+            --animate-duration: 5s;
         }
         figure {
         width: 50%; 
@@ -43,30 +49,30 @@
             font-size: larger;
         }
         picture {
-            width: 50%; 
-            height: 50%;
+            width: 30%; 
+            height: 30%;
             margin: auto; 
             overflow: hidden;
-            min-width: 600px;
+            min-width: 150px;
         }
         picture img {
-            width: 100%;
+            width: 50%;
             margin: 10% 0 0 0;
         }
     </style>
 </head>
 <body>
     <h1>Hi, Wold!</h1>
-    <div class="dialog">
+    <div class="dialog animate__animated animate__bounceInLeft">
     <button id="open">Show resalt</button>
-    <dialog>
+    <dialog class="animate__animated animate__hinge">
         <h1>Hello!</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, nam!</p>
         <button id="close">Close</button>
     </dialog>
     </div>
-    <div class="animate__animated animate__rotateIn">
-    <figure><img  src="img/hourglass.jpg" alt="hourglass">
+    <div >
+    <figure><img class="animate__animated animate__bounceInRight" src="img/hourglass.jpg" alt="hourglass">
     <figcaption>Time to live</figcaption>
     </figure><br>
     <div class="details">
@@ -88,14 +94,14 @@
     <br>
     <picture>
         <source
-        media="(min-width: 900px)"
+        media="(min-width: 300px)"
         srcset="img/hourglass.jpg"
         />
         <source
-        media="(min-width: 400px)"
+        media="(min-width: 150px)"
         srcset="img/hourglass.jpg"
         />
-        <img src="img/hourglass.jpg" alt="">
+        <img class="animate__animated animate__hinge" src="img/hourglass.jpg" alt="">
 
     </picture>
     <script>
@@ -107,6 +113,7 @@
         ('#close')
         openBtn.onclick = () => dialog.showModal() 
         closeBtn.onclick = () => dialog.close()
+        document.documentElement.style.setProperty('--animate-duration', '5s');
     </script>  
     </div>    
     </div>
