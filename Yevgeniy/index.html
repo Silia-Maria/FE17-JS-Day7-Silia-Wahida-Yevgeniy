@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime</title>
+    <style>
+        .animate__animated animate__rotateIn {
+            --animate-duration: 3s;
+        }
+        figure {
+        width: 50%; 
+        height: 50%;
+        margin: auto; 
+        overflow: hidden;
+        min-width: 600px;
+        }
+        figure img { 
+        width: 100%;
+        margin: 10% 0 0 0;
+        }
+        .details {
+            text-align: center;
+        }
+        dialog::backdrop {
+            background-color: black;
+        }
+        dialog {
+            max-width: 400px;
+            border: 1px, solid, grey;
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .dialog {
+            text-align: center;
+        }
+        figcaption {
+            text-align: center;
+            color: yellowgreen;
+            font-size: larger;
+        }
+        picture {
+            width: 50%; 
+            height: 50%;
+            margin: auto; 
+            overflow: hidden;
+            min-width: 600px;
+        }
+        picture img {
+            width: 100%;
+            margin: 10% 0 0 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hi, Wold!</h1>
+    <div class="dialog">
+    <button id="open">Show resalt</button>
+    <dialog>
+        <h1>Hello!</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, nam!</p>
+        <button id="close">Close</button>
+    </dialog>
+    </div>
+    <div class="animate__animated animate__rotateIn">
+    <figure><img  src="img/hourglass.jpg" alt="hourglass">
+    <figcaption>Time to live</figcaption>
+    </figure><br>
+    <div class="details">
+        Time: <input type="text" list="list">
+    <datalist id="list">
+        <option value="1 Hour"></option>
+        <option value="2 Hours"></option>
+        <option value="3 Hours"></option>
+        <option value="4 Hours"></option>
+        <option value="5 Hours"></option>
+        <option value="6 Hours"></option>
+        <option value="7 Hours"></option>
+        <option value="8 Hours"></option>
+        <option value="9 Hours"></option>
+        <option value="10 Hours"></option>
+        <option value="11 Hours"></option>
+    </datalist>
+    <br>
+    <br>
+    <picture>
+        <source
+        media="(min-width: 900px)"
+        srcset="img/hourglass.jpg"
+        />
+        <source
+        media="(min-width: 400px)"
+        srcset="img/hourglass.jpg"
+        />
+        <img src="img/hourglass.jpg" alt="">
+
+    </picture>
+    <script>
+        const openBtn = document.querySelector
+        ('#open')
+        const dialog = document.querySelector
+        ('dialog')
+        const closeBtn = document.querySelector
+        ('#close')
+        openBtn.onclick = () => dialog.showModal() 
+        closeBtn.onclick = () => dialog.close()
+    </script>  
+    </div>    
+    </div>
+</body>
+</html>

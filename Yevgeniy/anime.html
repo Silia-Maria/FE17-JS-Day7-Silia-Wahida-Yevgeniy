@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>Button click :)!</title>
+    <style>
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-user-select:none;
+    user-select: none;
+    }
+    body {
+    background-color: rgb(31, 31, 31);
+    }
+    button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 4rem;
+    width: 10rem;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 5px black;
+    background-color: white;
+    }
+    h1 {
+        text-align: center;
+        color: aliceblue;
+    }
+    .animate__animated.animate__lightSpeedInRight {
+    --animate-duration: 3s;
+    color: yellowgreen;
+    }
+    .animate__animated.animate__lightSpeedInLeft {
+    --animate-duration: 3s;
+    color: darkolivegreen;
+    }
+    </style>
+</head>
+<body>
+    <br>
+    <h1><p class="animate__animated animate__lightSpeedInRight">Hello, Saveliy and Milana!</p>
+        <p class="animate__animated animate__lightSpeedInLeft">Click the Button Click Me, please :)!</p>
+        </h1>   
+    <button id='runaway-btn'>Click Me</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <script>
+        const button = document.getElementById("runaway-btn");
+
+const animateMove = (element, prop, pixels) =>
+    anime({
+    targets: element,
+    [prop]: `${pixels}px`,
+    easing: "easeOutCirc"
+    });
+["mouseover", "click"].forEach(function (el) {
+    button.addEventListener(el, function (event) {
+    const top = getRandomNumber(window.innerHeight - this.offsetHeight);
+    const left = getRandomNumber(window.innerWidth - this.offsetWidth);
+    animateMove(this, "left", left).play();
+    animateMove(this, "top", top).play();
+    });
+});
+const getRandomNumber = (num) => {
+  return Math.floor(Math.random() * (num + 1));
+};
+    </script>
+</body>
+</html>
